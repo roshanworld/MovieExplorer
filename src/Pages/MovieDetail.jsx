@@ -7,7 +7,8 @@ function MovieDetail() {
 
     useEffect(() => {
         async function getMovie() {
-          const res = await fetch(`http://www.omdbapi.com/?apikey=7a644292&i=${id}`)
+            const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
+          const res = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`)
     
           const data = await res.json();  
           console.log(data);

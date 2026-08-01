@@ -8,7 +8,8 @@ function Home() {
 
     const fetchMovies = async (query,  page = 1) => {
         setLoading(true)
-        const response = await fetch(`http://www.omdbapi.com/?apikey=7a644292&s=${query}&page=${page}`)
+        const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
+        const response = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}&page=${page}`)
         const data = await response.json()
 
 
